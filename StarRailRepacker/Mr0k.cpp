@@ -105,7 +105,7 @@ std::byte* Encrypt(std::byte* bytes, unsigned int size) {
 	memcpy(&seed1, key2, sizeof key2);
 	unsigned __int64 seed2;
 	memcpy(&seed2, key3, sizeof key3);
-	unsigned __int64 seed = seed2 ^ seed1 ^ (seed1 + (newSize - 20));
+	unsigned __int64 seed = seed2 ^ seed1 ^ (seed1 + newSize - 20);
 
 	std::byte seedBytes[sizeof(seed)];
 
