@@ -39,7 +39,7 @@ void PrintNotice() {
 	cout << "Version: 1.0.0" << endl;
 	cout << endl;
 
-	cout << "适用游戏为: 崩坏:星穹铁道 绝区零" << endl;
+	cout << "适用游戏为: 崩坏:星穹铁道" << endl;
 	cout << "本程序仅在内群传播，禁止外传！！！" << endl;
 	cout << "使用教程请到 blog.wtan.xyz 寻找 :P" << endl;
 
