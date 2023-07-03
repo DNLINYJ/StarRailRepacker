@@ -21,13 +21,19 @@
     <ClCompile Include="AES-128.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Translate.cpp">
+    <ClCompile Include="TranslateUnity3D.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="lz4.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TranslateBlock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UnityReader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,10 +47,16 @@
     <ClInclude Include="Mr0k.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="Translate.h">
+    <ClInclude Include="TranslateUnity3D.h">
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="lz4.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TranslateBlock.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UnityReader.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /StarRailRepacker/1.unity3d
+/StarRailRepacker/0a151bdb66aba4ca6cf1278694278844
+*.bundle
+*.unity3d

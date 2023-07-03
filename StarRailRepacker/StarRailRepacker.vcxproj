@@ -138,14 +138,18 @@
     <ClCompile Include="lz4.c" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mr0k.cpp" />
-    <ClCompile Include="Translate.cpp" />
+    <ClCompile Include="TranslateUnity3D.cpp" />
+    <ClCompile Include="TranslateBlock.cpp" />
+    <ClCompile Include="UnityReader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AES-128.h" />
     <ClInclude Include="lz4.h" />
     <ClInclude Include="magic_constants.h" />
     <ClInclude Include="Mr0k.h" />
-    <ClInclude Include="Translate.h" />
+    <ClInclude Include="TranslateUnity3D.h" />
+    <ClInclude Include="TranslateBlock.h" />
+    <ClInclude Include="UnityReader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
