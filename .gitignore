@@ -365,3 +365,5 @@ FodyWeavers.xsd
 /StarRailRepacker/0a151bdb66aba4ca6cf1278694278844
 *.bundle
 *.unity3d
+/StarRailRepacker/ce40d2ecb3770585dbc9f95ef5a06042
+*.block
