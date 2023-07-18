@@ -15,6 +15,11 @@ struct BlockIndex
 {
 	int id;
 	string path;
+	string key3_path;
+};
+
+struct key3 {
+	uint8_t key3[16];
 };
 
 int TranslateToMihoyoBlockUnityFile(string inpath, string outpath) {
@@ -30,6 +35,7 @@ int TranslateToMihoyoBlockUnityFile(string inpath, string outpath) {
 	while (!indexFile.eof()) {
 		BlockIndex blockIndex;
 		int path_length;
+		int key3_path_length;
 
 		// 读取id
 		indexFile.read(reinterpret_cast<char*>(&blockIndex.id), sizeof(int));
@@ -45,6 +51,18 @@ int TranslateToMihoyoBlockUnityFile(string inpath, string outpath) {
 		if (indexFile.eof()) break;
 
 		blockIndex.path.assign(path_buffer.begin(), path_buffer.end());
+
+		// 读取key3_path的长度
+		indexFile.read(reinterpret_cast<char*>(&key3_path_length), sizeof(int));
+		if (indexFile.eof()) break;
+
+		// 读取key3_path
+		std::vector<char> path_buffer_key3(key3_path_length);
+		indexFile.read(path_buffer_key3.data(), key3_path_length);
+		if (indexFile.eof()) break;
+
+		blockIndex.key3_path.assign(path_buffer_key3.begin(), path_buffer_key3.end());
+
 		block_indices.push_back(blockIndex);
 	}
 	cout << "[Debug] Number of BlockIndex instances: " << block_indices.size() << endl;
@@ -65,6 +83,25 @@ int TranslateToMihoyoBlockUnityFile(string inpath, string outpath) {
 			cout << "[Error] 打开源文件失败! " << endl;
 			return 0;
 		}
+
+		std::vector<key3> oldKey3s;
+
+		fstream key3File;
+		key3File.open(blockIndex.key3_path, ios::in | ios::binary);
+		// 读取key3实例，直到文件末尾
+		while (!key3File.eof()) {
+			key3 key3_;
+			int path_length;
+			int key3_path_length;
+
+			// 读取id
+			key3File.read(reinterpret_cast<char*>(key3_.key3), 0x10);
+			if (key3File.eof()) break;
+
+			oldKey3s.push_back(key3_);
+		}
+		key3File.close();
+		cout << "[Debug] Number of Key3 instances: " << oldKey3s.size() << endl;
 
 		// ReadHeader
 		HeaderInfo m_Header = ReadHeader(normalUnityFile);
@@ -118,10 +155,11 @@ int TranslateToMihoyoBlockUnityFile(string inpath, string outpath) {
 			// 加密block
 			if (block.compressedSize > 0xFF && (block.flags == 0x42 || block.flags == 0x43)) {
 
-				newCompressedBytes = Encrypt(compressedBytes, block.compressedSize);
+				newCompressedBytes = Encrypt(compressedBytes, block.compressedSize, oldKey3s[0].key3);
+				oldKey3s.erase(oldKey3s.begin()); ''
 
-				// 添加加密后多出的大小 (mr0k文件头 + key1 为 0x14 字节)
-				block.compressedSize += 0x14;
+					// 添加加密后多出的大小 (mr0k文件头 + key1 为 0x14 字节)
+					block.compressedSize += 0x14;
 
 				// 修改Flag
 				block.flags = 0x45; // Flag改为LZ4Mr0k
