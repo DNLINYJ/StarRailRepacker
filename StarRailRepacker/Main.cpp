@@ -35,19 +35,17 @@ void main(int argc, char** argv) {
 void PrintNotice() {
 	cout << endl;
 
-	cout << "½«Õý³£Unity3dÎÄ¼þ×ªÎªMr0k Unity3dÎÄ¼þ" << endl;
+	cout << "å°†æ­£å¸¸Unity3dæ–‡ä»¶è½¬ä¸ºMr0k Unity3dæ–‡ä»¶" << endl;
 	cout << "Version: 1.0.0" << endl;
 	cout << endl;
 
-	cout << "ÊÊÓÃÓÎÏ·Îª: ±À»µ:ÐÇñ·ÌúµÀ" << endl;
-	cout << "±¾³ÌÐò½öÔÚÄÚÈº´«²¥£¬½ûÖ¹Íâ´«£¡£¡£¡" << endl;
-	cout << "Ê¹ÓÃ½Ì³ÌÇëµ½ blog.wtan.xyz Ñ°ÕÒ :P" << endl;
+	cout << "é€‚ç”¨æ¸¸æˆä¸º: å´©å:æ˜Ÿç©¹é“é“" << endl;
 
 	cout << endl;
-	cout << "²ÎÊý: <inpath> <outpath> <savefromat>" << endl;
-	cout << "inpath : ´ý¼ÓÃÜÎÄ¼þÂ·¾¶" << endl;
-	cout << "outpath : ¼ÓÃÜºóÎÄ¼þÂ·¾¶" << endl;
-	cout << "savefromat : 1 ÎªÐÇñ·ÌúµÀÒ»¶þ²â¸ñÊ½ [ºó×ºÃûÎªbundle] " << endl;
-	cout << "             2 ÎªÐÇñ·ÌúµÀÈý²â¼°¹«²â¸ñÊ½ [ºó×ºÃûÎªblock] " << endl;
-	//cout << "             3 Îª¾øÇøÁã¸ñÊ½ [ºó×ºÃûÎªbundle]" << endl;
+	cout << "å‚æ•°: <inpath> <outpath> <savefromat>" << endl;
+	cout << "inpath : å¾…åŠ å¯†æ–‡ä»¶è·¯å¾„" << endl;
+	cout << "outpath : åŠ å¯†åŽæ–‡ä»¶è·¯å¾„" << endl;
+	cout << "savefromat : 1 ä¸ºæ˜Ÿç©¹é“é“ä¸€äºŒæµ‹æ ¼å¼ [åŽç¼€åä¸ºbundle] " << endl;
+	cout << "             2 ä¸ºæ˜Ÿç©¹é“é“ä¸‰æµ‹åŠå…¬æµ‹æ ¼å¼ [åŽç¼€åä¸ºblock] " << endl;
+	//cout << "             3 ä¸ºç»åŒºé›¶æ ¼å¼ [åŽç¼€åä¸ºbundle]" << endl;
 }
